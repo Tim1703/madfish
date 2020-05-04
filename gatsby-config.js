@@ -6,6 +6,15 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        custom: {
+          families: ['SchnyderS', 'Circular'],
+          urls: ['src/fonts/fonts.css']
+        }
+      }
+    },
+    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
