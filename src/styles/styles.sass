@@ -1,0 +1,214 @@
+@font-face
+  font-family: 'Gilroy'
+  src: local("Gilroy"), url("../../static/fonts/Gilroy/Gilroy-Regular.woff") format("woff")
+
+@font-face
+  font-family: 'Gilroy'
+  src: local("Gilroy-SemiBold"), local("Gilroy SemiBold"), url("../../static/fonts/Gilroy/Gilroy-Semibold.woff") format("woff")
+  font-weight: 600
+
+@font-face
+  font-family: 'Gilroy'
+  src: local("Gilroy-Bold"), local("Gilroy Bold"), url("../../static/fonts/Gilroy/Gilroy-Bold.woff") format("woff")
+  font-weight: 700
+
+@font-face
+  font-family: 'Gilroy'
+  src: local("Gilroy-ExtraBold"), local("Gilroy ExtraBold"), url("../../static/fonts/Gilroy/Gilroy-ExtraBold.woff") format("woff")
+  font-weight: 800
+
+@font-face
+  font-family: 'Gilroy'
+  src: local("Gilroy-Medium"), local("Gilroy Medium"), url("../../static/fonts/Gilroy/Gilroy-Medium.woff") format("woff")
+  font-weight: 500
+
+@font-face
+  font-family: 'Gilroy'
+  src: local("Gilroy-Light"), local("Gilroy Light"), url("../../static/fonts/Gilroy/Gilroy-Light.woff") format("woff")
+  font-weight: 300
+
+@import "./varibles.sass"
+@import "./breakpoints.scss"
+
+body,
+html
+  user-select: none
+  background: $ice-blue
+  overscroll-behavior: none
+  margin: 0
+  font-family: $font
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  //visibility: hidden
+  color: $alaskan-cruise
+  font-size: 14px
+
+.container
+  width: 1560px
+  min-width: 1560px
+  margin: 0 auto
+  height: 100%
+  position: relative
+  @include media("<=1560px")
+    width: 1280px
+    min-width: 1280px
+  @include media("<=desktop")
+    width: 1080px
+    min-width: 1080px
+  @include media("<=1080px")
+    width: 100%
+    min-width: 100%
+  .row
+    display: flex
+    height: 100%
+    padding: 0 32px
+    @include media("<=phone")
+      padding: 0 16px
+  .v-center
+    align-items: center
+  .space-between
+    justify-content: space-between
+  .flex-wrap
+    flex-wrap: wrap
+
+.container-fluid
+  width: 100%
+  height: 100%
+  .row
+    display: flex
+    height: 100%
+
+a
+  text-decoration: none
+  color: $alaskan-cruise
+
+.button
+  background: none
+  border: none
+  outline: none
+  cursor: pointer
+  padding: 0
+  &-primary
+    padding: 10px 20px
+    border-radius: 8px
+    line-height: 1.43
+    font-weight: 800
+    color: $white
+    background: linear-gradient(84.99deg, #25EBC0 -7.64%, #0ACAA0 145.94%)
+    position: relative
+    box-shadow:  -6px -6px 16px rgba(255, 255, 255, 0.6), 6px 9px 40px rgba(10, 202, 160, 0.44)
+    &::before
+      position: absolute
+      content: ''
+      top: -1px
+      left: -1px
+      right: -1px
+      bottom: -1px
+      background-image: linear-gradient(84.99deg, $white -7.64%, $turquoise 145.94%)
+      z-index: -1
+      border-radius: 8px
+  &-arrow
+    font-weight: 500
+    line-height: 1.43
+    color: $turquoise
+    //display: flex
+    //align-items: center
+    position: relative
+    svg
+      position: absolute
+      left: calc(100% + 5px)
+      top: calc(50% + 1px)
+      transform: translateY(-50%)
+    &.white
+      font-weight: 500
+      color: $white
+      svg
+        path
+          fill: $white
+  &-secondary
+    display: flex
+    position: relative
+    &::before, &::after
+      content: ''
+      position: absolute
+    &::before
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      box-shadow: inset 4px 4px 6px rgba(18, 46, 101, 0.1), inset -4px -4px 4px rgba(255, 255, 255, 0.7)
+      border-radius: 12px
+      z-index: 2
+      transition: opacity $animationTime
+      opacity: 0
+    &::after
+      top: -1px
+      left: -1px
+      bottom: -1px
+      right: -1px
+      z-index: 0
+      background: linear-gradient(171.26deg, #FFFFFF 26.33%, rgba(219, 230, 242, 0) 50.71%, #8F9FAE 100%)
+      border-radius: 12px
+      box-shadow: -16px -16px 40px rgba(255, 255, 255, 0.8), 16px 4px 64px rgba(18, 61, 101, 0.3), inset -8px -6px 80px rgba(255, 255, 255, 0.18)
+      opacity: 1
+      transition: opacity $animationTime
+    .border
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: linear-gradient(4.09deg, #FFFFFF -30.86%, #ECF1F7 -10.72%, #CFDCEB 112.31%)
+      z-index: 1
+      border-radius: 12px
+      transition: background $animationTime
+    .content
+      width: 100%
+      z-index: 5
+      transition: transform $animationTime
+      position: relative
+      padding: 10px 20px
+      line-height: 1.43
+      color: $turquoise
+      font-weight: 800
+    &:active
+      &::before
+        opacity: 1
+      &::after
+        opacity: 0
+      .border
+        background: linear-gradient(352.64deg, #EBF2F9 45.95%, #C6D7EB 156.07%)
+      .content
+        transform: translate($translateAmount, $translateAmount)
+
+  &-small
+    width: 50px
+    height: 50px
+    display: flex
+    align-items: center
+    justify-content: center
+
+
+h1, h2, h3, h4, h5, h6, p
+  margin: 0
+  padding: 0
+
+h2
+  font-size: 4rem
+  font-weight: 800
+  line-height: 1.07
+  letter-spacing: 1.12px
+  margin-bottom: 60px
+
+h3
+  font-size: 1.286rem
+  font-weight: 800
+  line-height: 1.39
+
+h4
+  font-size: 1.286rem
+  font-weight: bold
+  line-height: 1.11
+
+.section
+  padding: 120px 0

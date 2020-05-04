@@ -1,0 +1,58 @@
+@import '../../styles/varibles'
+
+.header
+  position: fixed
+  width: 100%
+  height: 100px
+  z-index: 20
+  background-color: $ice-blue
+  transition: height .3s, background-color .3s
+  &::after
+    content: ''
+    position: absolute
+    top: 100%
+    left: 0
+    width: 100%
+    height: 1px
+    background: linear-gradient(171.26deg, #FFFFFF 26.33%, rgba(219, 230, 242, 0) 50.71%, #8F9FAE 100%)
+    opacity: 0
+    transition: opacity .3s
+
+.smaller
+  height: 70px
+  background-color: rgba($ice-blue, .72)
+  backdrop-filter: saturate(180%) blur(20px)
+  &::after
+    opacity: 1
+
+.logo
+  a
+    text-decoration: none
+    display: flex
+    align-items: center
+    span
+      margin-left: 20px
+      opacity: 0.6
+      text-shadow: 1px 1px 2px rgba(20, 44, 73, 0.31), -1px -1px 2px rgba(255, 255, 255, 0.6)
+      font-weight: 600
+      font-size: 28px
+      letter-spacing: 0.02em
+      color: #202E43
+
+.nav
+  display: flex
+  align-items: center
+  &Links
+    padding: 0
+    margin: 0
+    margin-right: 30px
+    li
+      list-style: none
+      display: inline-block
+      margin: 0
+      a
+        padding: 10px
+        font-weight: bold
+        font-size: 14px
+        line-height: 100%
+        letter-spacing: 0.02em

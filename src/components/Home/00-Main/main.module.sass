@@ -1,0 +1,112 @@
+@import "../../../styles/varibles"
+
+.main
+  padding-bottom: 0
+
+.wrapper
+  width: 100%
+  display: flex
+  padding-top: 30px
+  justify-content: space-between
+
+.content
+  width: 31%
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+.heading
+  h1
+    font-weight: 800
+    font-size: 56px
+    line-height: 100%
+    letter-spacing: 0.02em
+  p
+    font-weight: 800
+    font-size: 36px
+    line-height: 100%
+    letter-spacing: 0.02em
+    margin-top: 14px
+
+.navigation
+  h4
+    font-size: 24px
+    font-weight: 800
+    line-height: 1.25
+    letter-spacing: normal
+  p
+    line-height: 1.67
+    margin-top: 20px
+
+.buttons
+  display: flex
+  margin-bottom: 40px
+
+.button
+  margin-right: 20px
+
+.cases
+  width: 57%
+
+.mainCase
+  margin-bottom: 38px
+  position: relative
+  height: 380px
+  border-radius: 24px
+  //padding: 1px
+  z-index: 1
+  &::before, &::after
+    content: ''
+    position: absolute
+    border-radius: 12px
+  &::before
+    z-index: 0
+    top: -1px
+    bottom: -1px
+    left: -1px
+    right: -1px
+    background: linear-gradient(to bottom, #ffffff, rgba(219, 230, 242, 0), #8f9fae)
+    box-shadow:  -16px -16px 40px rgba(255, 255, 255, 0.8), inset -8px -6px 80px rgba(255, 255, 255, 0.18), 16px 4px 64px rgba(18, 61, 101, 0.3)
+  &::after
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1
+    background-color: $ice-blue
+.mainCaseContent
+  border-radius: 12px
+  overflow: hidden
+  width: 100%
+  height: 100%
+  //width: calc(100% + 2px)
+  //height: calc(100% + 2px)
+  //margin-top: -1px
+  //margin-left: -1px
+  z-index: 5
+  position: relative
+
+//.border
+//  border-radius: 24px
+//  overflow: hidden
+//  position: relative
+//  height: 100%
+//  width: 100%
+
+.thumbs
+  display: flex
+  margin-left: -10px
+  margin-right: -10px
+
+.thumb
+  padding: 10px
+  width: 25%
+
+.thumbContent
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100%
+  height: 100px
+  img
+    margin: 0

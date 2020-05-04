@@ -1,0 +1,211 @@
+@import '../../styles/varibles'
+
+.card
+  display: flex
+  position: relative
+  height: 100%
+  &::before, &::after
+    content: ''
+    position: absolute
+  &::before
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    box-shadow: inset 4px 4px 6px rgba(18, 46, 101, 0.1), inset -4px -4px 4px rgba(255, 255, 255, 0.7)
+    border-radius: 12px
+    z-index: 2
+    transition: opacity $animationTime
+  &::after
+    top: -1px
+    left: -1px
+    bottom: -1px
+    right: -1px
+    z-index: 0
+    background: linear-gradient(171.26deg, #FFFFFF 26.33%, rgba(219, 230, 242, 0) 50.71%, #8F9FAE 100%)
+    border-radius: 12px
+    box-shadow: -16px -16px 40px rgba(255, 255, 255, 0.8), 16px 4px 64px rgba(18, 61, 101, 0.3), inset -8px -6px 80px rgba(255, 255, 255, 0.18)
+    opacity: 0
+    transition: opacity $animationTime
+  &:hover
+    &::before
+      opacity: 0
+    &::after
+      opacity: 1
+    .border
+      &::before
+        opacity: 0
+      &::after
+        opacity: 1
+    .content
+      transform: translate(-$translateAmount, -$translateAmount)
+    .open
+      &::before
+        opacity: 1
+      &::after
+        opacity: 0
+      &Border
+        background: linear-gradient(352.64deg, #EBF2F9 45.95%, #C6D7EB 156.07%)
+      &Content
+        transform: translate($translateAmount, $translateAmount)
+  &:active
+    &::before
+      opacity: 1
+    &::after
+      opacity: 0
+    .border
+      //background: linear-gradient(4.09deg, #FFFFFF -30.86%, #ECF1F7 -10.72%, #CFDCEB 112.31%)
+      &::before
+        opacity: 0
+      &::after
+        opacity: 1
+    .content
+      transform: none
+    .open
+      &::before
+        opacity: 0
+      &::after
+        opacity: 1
+      &Border
+        background: linear-gradient(4.09deg, #FFFFFF -30.86%, #ECF1F7 -10.72%, #CFDCEB 112.31%)
+      &Content
+        transform: none
+
+.hideDefault
+  &::before, &::after
+    opacity: 0
+  .border
+    &::before
+      opacity: 0
+
+.reverse
+  &::before
+    opacity: 0
+  &::after
+    opacity: 1
+  .border
+    &::before
+      opacity: 1
+    &::after
+      opacity: 0
+  &:hover
+    &::before
+      opacity: 0
+    &::after
+      opacity: 1
+    .content
+      transform: none
+    .border
+      &::before
+        opacity: 1
+      &::after
+        opacity: 0
+  &:active
+    &::before
+      opacity: 1
+    &::after
+      opacity: 0
+    .content
+      transform: translate($translateAmount, $translateAmount)
+    .border
+      &::before
+        opacity: 0
+      &::after
+        opacity: 1
+
+.border
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  //background: linear-gradient(4.09deg, #FFFFFF -30.86%, #ECF1F7 -10.72%, #CFDCEB 112.31%)
+  z-index: 1
+  border-radius: 12px
+  opacity: 1
+
+  &::before, &::after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    border-radius: 12px
+    transition: opacity $animationTime
+  &::before
+    opacity: 1
+    background: linear-gradient(4.09deg, #FFFFFF -30.86%, #ECF1F7 -10.72%, #CFDCEB 112.31%)
+  &::after
+    background: linear-gradient(352.64deg, #EBF2F9 45.95%, #C6D7EB 156.07%)
+    opacity: 0
+
+.content
+  width: 100%
+  z-index: 5
+  transition: transform $animationTime
+  position: relative
+
+.link
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 6
+
+
+
+
+.openWrapper
+  position: absolute
+  top: 20px
+  right: 20px
+
+.open
+  display: flex
+  position: relative
+  height: 100%
+  &::before, &::after
+    content: ''
+    position: absolute
+  &::before
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    box-shadow: inset 4px 4px 6px rgba(18, 46, 101, 0.1), inset -4px -4px 4px rgba(255, 255, 255, 0.7)
+    border-radius: 12px
+    z-index: 2
+    transition: opacity $animationTime
+    opacity: 0
+  &::after
+    top: -1px
+    left: -1px
+    bottom: -1px
+    right: -1px
+    z-index: 0
+    background: linear-gradient(171.26deg, #FFFFFF 26.33%, rgba(219, 230, 242, 0) 50.71%, #8F9FAE 100%)
+    border-radius: 12px
+    box-shadow: -16px -16px 40px rgba(255, 255, 255, 0.8), 16px 4px 64px rgba(18, 61, 101, 0.3), inset -8px -6px 80px rgba(255, 255, 255, 0.18)
+    opacity: 1
+    transition: opacity $animationTime
+.openBorder
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: linear-gradient(4.09deg, #FFFFFF -30.86%, #ECF1F7 -10.72%, #CFDCEB 112.31%)
+  z-index: 1
+  border-radius: 12px
+  transition: background $animationTime
+.openContent
+  width: 100%
+  z-index: 5
+  transition: transform $animationTime
+  position: relative
+  padding: 10px 15px
+  line-height: 1.43
+  color: $turquoise
+  font-weight: 800

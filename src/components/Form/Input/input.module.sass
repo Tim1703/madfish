@@ -1,0 +1,68 @@
+@import "../../../styles/varibles"
+
+.label
+  width: 100%
+  position: relative
+  margin-bottom: 30px
+  //z-index: 1
+  //background: linear-gradient(352.37deg, #EBF2F9 45.95%, #C6D7EB 156.07%)
+  padding: 2px
+  &:focus-within
+    .border
+      opacity: 0
+    .borderHover
+      opacity: 1
+  &.half
+    width: calc(50% - 12px)
+
+.border, .borderHover
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  z-index: 2
+  border-radius: 18px
+  transition: opacity $animationTime
+  &::before, &::after
+    content: ''
+    position: absolute
+    border-radius: 18px
+  &::before
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    background: $ice-blue
+    z-index: 1
+  &::after
+    top: -1px
+    bottom: -1px
+    right: -1px
+    left: -1px
+    z-index: 0
+.border
+  &::after
+    background: linear-gradient(155.57deg, #FFFFFF 35.92%, rgba(55, 83, 111, 0.4) 190.57%)
+.borderHover
+  opacity: 0
+  &::after
+    background: linear-gradient(159.93deg, #FFFFFF -105.81%, rgba(55, 83, 111, 0.4) 188.83%)
+
+.input
+  width: 100%
+  padding: 15px 20px
+  background: linear-gradient(1.55deg, #FFFFFF -30.86%, #ECF1F7 -10.72%, #CFDCEB 112.31%)
+  box-shadow: inset 4px 4px 6px rgba(18, 46, 101, 0.1), inset -4px -4px 4px rgba(255, 255, 255, 0.7)
+  border-radius: 16px
+  border: none
+  z-index: 3
+  position: relative
+  outline: none
+  font-size: 1.143rem
+  font-weight: 500
+  color: $alaskan-cruise
+  opacity: 1
+  line-height: 1
+  &::placeholder
+    opacity: .6
