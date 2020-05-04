@@ -9,8 +9,8 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         custom: {
-          families: ['SchnyderS', 'Circular'],
-          urls: ['src/fonts/fonts.css']
+          families: ['Gilroy'],
+          urls: ['/fonts/fonts.css']
         }
       }
     },
